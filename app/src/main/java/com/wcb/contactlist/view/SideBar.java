@@ -121,9 +121,6 @@ public class SideBar extends View {
         this.onTouchingLetterChangedListener = onTouchingLetterChangedListener;
     }
 
-    /**
-     * @author coder
-     */
     public interface OnTouchingLetterChangedListener {
         public void onTouchingLetterChanged(String s);
     }

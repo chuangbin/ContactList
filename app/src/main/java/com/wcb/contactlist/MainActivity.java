@@ -13,6 +13,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -75,6 +77,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                     DataUtil.filterData(adapter, sourceDateList, text);//过滤数据列表
                     adapter.notifyDataSetChanged();
                 }
+            }
+        });
+
+        sortListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(MainActivity.this, sourceDateList.get(i).getName() + "-" + sourceDateList.get(i).getPhoneNum(), Toast.LENGTH_SHORT).show();
             }
         });
     }
